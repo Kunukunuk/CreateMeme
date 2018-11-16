@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     var imagePicker = UIImagePickerController()
+    @IBOutlet weak var takenImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBAction func usePhoto(_ sender: UIButton) {
         usePhoto()
     }
-    
     
     func useCamera() {
         
