@@ -25,8 +25,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     @IBAction func usePhoto(_ sender: UIButton) {
-        //usePhoto()
-        UIImageWriteToSavedPhotosAlbum(takenImage!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+        usePhoto()
+        //UIImageWriteToSavedPhotosAlbum(takenImage!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
     
     func useCamera() {
