@@ -22,6 +22,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         useCamera()
     }
     
+    @IBAction func usePhoto(_ sender: UIButton) {
+        usePhoto()
+    }
+    
+    
     func useCamera() {
         
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
