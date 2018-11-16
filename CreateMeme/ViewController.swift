@@ -12,6 +12,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 
     var imagePicker = UIImagePickerController()
     @IBOutlet weak var takenImageView: UIImageView!
+    var takenImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     @IBAction func usePhoto(_ sender: UIButton) {
-        usePhoto()
+        //usePhoto()
+        UIImageWriteToSavedPhotosAlbum(takenImage!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
     
     func useCamera() {
@@ -47,9 +49,22 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             takenImageView.image = image
+            takenImage = image
         }
         imagePicker.dismiss(animated: true, completion: nil)
     }
-
+    
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            // we got back an error!
+            let ac = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        } else {
+            let ac = UIAlertController(title: "Image Saved!", message: "Your image has been saved to your photos.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        }
+    }
 }
 
