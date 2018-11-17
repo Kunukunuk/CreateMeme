@@ -11,7 +11,6 @@ import UIKit
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     var imagePicker = UIImagePickerController()
-    @IBOutlet weak var takenImageView: UIImageView!
     var takenImage: UIImage?
     
     override func viewDidLoad() {
@@ -48,10 +47,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            takenImageView.image = image
             takenImage = image
         }
         imagePicker.dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "PickPicture", sender: self)
     }
     
     @objc func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {

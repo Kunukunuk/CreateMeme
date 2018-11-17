@@ -46,10 +46,64 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="YEW-6E-JlK"/>
+                    <connections>
+                        <segue destination="POB-bb-qXl" kind="presentation" identifier="PickPicture" id="NNn-RT-9EV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="992.79999999999995" y="43.628185907046479"/>
+        </scene>
+        <!--Picture View Controller-->
+        <scene sceneID="3Xg-Vn-zLY">
+            <objects>
+                <viewController id="POB-bb-qXl" customClass="PictureViewController" customModule="CreateMeme" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qnx-RL-UeL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qKM-fn-MnD">
+                                <rect key="frame" x="10" y="30" width="355" height="535"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAs-9g-JAi">
+                                <rect key="frame" x="10" y="621" width="355" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancel:" destination="POB-bb-qXl" eventType="touchUpInside" id="J9X-WE-PCq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWn-OO-xkj">
+                                <rect key="frame" x="10" y="575" width="355" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Save Photo"/>
+                                <connections>
+                                    <action selector="saveThePhoto:" destination="POB-bb-qXl" eventType="touchUpInside" id="x0u-ed-qxs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KWn-OO-xkj" firstAttribute="leading" secondItem="mmW-hR-pHT" secondAttribute="leading" constant="10" id="OZO-m1-XzI"/>
+                            <constraint firstItem="KWn-OO-xkj" firstAttribute="top" secondItem="qKM-fn-MnD" secondAttribute="bottom" constant="10" id="PEo-RH-bc9"/>
+                            <constraint firstItem="mmW-hR-pHT" firstAttribute="bottom" secondItem="oAs-9g-JAi" secondAttribute="bottom" constant="10" id="UQk-JG-YAW"/>
+                            <constraint firstItem="oAs-9g-JAi" firstAttribute="leading" secondItem="mmW-hR-pHT" secondAttribute="leading" constant="10" id="bNn-hk-nMf"/>
+                            <constraint firstItem="qKM-fn-MnD" firstAttribute="top" secondItem="mmW-hR-pHT" secondAttribute="top" constant="10" id="dTz-F3-Sbj"/>
+                            <constraint firstItem="mmW-hR-pHT" firstAttribute="trailing" secondItem="oAs-9g-JAi" secondAttribute="trailing" constant="10" id="ebg-jn-HiC"/>
+                            <constraint firstItem="mmW-hR-pHT" firstAttribute="trailing" secondItem="qKM-fn-MnD" secondAttribute="trailing" constant="10" id="jaS-P0-6c3"/>
+                            <constraint firstItem="oAs-9g-JAi" firstAttribute="top" secondItem="KWn-OO-xkj" secondAttribute="bottom" constant="10" id="nTw-5c-2CD"/>
+                            <constraint firstItem="mmW-hR-pHT" firstAttribute="trailing" secondItem="KWn-OO-xkj" secondAttribute="trailing" constant="10" id="pCb-iI-mZ3"/>
+                            <constraint firstItem="qKM-fn-MnD" firstAttribute="leading" secondItem="mmW-hR-pHT" secondAttribute="leading" constant="10" id="xEf-CJ-yqS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mmW-hR-pHT"/>
+                    </view>
+                    <connections>
+                        <outlet property="chosenPictureImageView" destination="qKM-fn-MnD" id="eAe-Aw-Whf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8U6-uN-jiw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2049" y="44"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="u4e-Q9-YjH">

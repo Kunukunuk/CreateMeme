@@ -12,6 +12,7 @@
 		0D3099E5219E5510009B7E2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D3099E3219E5510009B7E2D /* Main.storyboard */; };
 		0D3099E7219E5512009B7E2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D3099E6219E5512009B7E2D /* Assets.xcassets */; };
 		0D3099EA219E5512009B7E2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D3099E8219E5512009B7E2D /* LaunchScreen.storyboard */; };
+		0D76376E219FBD4400A5362D /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D76376D219FBD4400A5362D /* PictureViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		0D3099E6219E5512009B7E2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D3099E9219E5512009B7E2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D3099EB219E5512009B7E2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D76376D219FBD4400A5362D /* PictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				0D3099DF219E5510009B7E2D /* AppDelegate.swift */,
 				0D3099E1219E5510009B7E2D /* ViewController.swift */,
+				0D76376D219FBD4400A5362D /* PictureViewController.swift */,
 				0D3099E3219E5510009B7E2D /* Main.storyboard */,
 				0D3099E6219E5512009B7E2D /* Assets.xcassets */,
 				0D3099E8219E5512009B7E2D /* LaunchScreen.storyboard */,
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D3099E2219E5510009B7E2D /* ViewController.swift in Sources */,
+				0D76376E219FBD4400A5362D /* PictureViewController.swift in Sources */,
 				0D3099E0219E5510009B7E2D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
