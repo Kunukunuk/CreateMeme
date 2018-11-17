@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TKp-bO-Pev">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="B0O-cs-bbL">
-                                <rect key="frame" x="145" y="306.5" width="85" height="74"/>
+                                <rect key="frame" x="145" y="328.5" width="85" height="74"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1QN-Bg-hao">
                                         <rect key="frame" x="0.0" y="0.0" width="85" height="30"/>
@@ -37,26 +37,35 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NNH-4B-ZfL">
-                                <rect key="frame" x="10" y="30" width="355" height="266.5"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="B0O-cs-bbL" firstAttribute="top" secondItem="NNH-4B-ZfL" secondAttribute="bottom" constant="10" id="BPa-VN-Fie"/>
                             <constraint firstItem="B0O-cs-bbL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="O7W-iA-avv"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NNH-4B-ZfL" secondAttribute="trailing" constant="10" id="SbJ-Di-Giq"/>
-                            <constraint firstItem="NNH-4B-ZfL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="cLh-CE-tLi"/>
                             <constraint firstItem="B0O-cs-bbL" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="cf8-U8-act"/>
-                            <constraint firstItem="NNH-4B-ZfL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="oc6-tf-wSp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <connections>
-                        <outlet property="takenImageView" destination="NNH-4B-ZfL" id="CJf-fO-g0I"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="YEW-6E-JlK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="992.79999999999995" y="43.628185907046479"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="u4e-Q9-YjH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TKp-bO-Pev" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RnN-yj-7oA">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="gpO-3t-RIG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zBq-ui-RJs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="53.600000000000001" y="43.628185907046479"/>
         </scene>
