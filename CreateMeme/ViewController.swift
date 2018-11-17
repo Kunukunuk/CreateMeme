@@ -25,7 +25,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     @IBAction func usePhoto(_ sender: UIButton) {
         usePhoto()
-        //UIImageWriteToSavedPhotosAlbum(takenImage!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
     
     func useCamera() {
@@ -53,16 +52,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         performSegue(withIdentifier: "PickPicture", sender: self)
     }
     
-    @objc func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
-        if let error = error {
-            // we got back an error!
-            let ac = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .default))
-            present(ac, animated: true)
-        } else {
-            let ac = UIAlertController(title: "Image Saved!", message: "Your image has been saved to your photos.", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .default))
-            present(ac, animated: true)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PickPicture" {
+            let destinationVC = segue.destination as! PictureViewController
+            destinationVC.takenImage = takenImage
         }
     }
 }
