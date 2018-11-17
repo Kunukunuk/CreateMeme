@@ -13,6 +13,9 @@ class PictureViewController: UIViewController {
     @IBOutlet weak var chosenPictureImageView: UIImageView!
     var takenImage: UIImage?
     
+    @IBOutlet weak var topTextField: UITextField!
+    @IBOutlet weak var bottomTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
