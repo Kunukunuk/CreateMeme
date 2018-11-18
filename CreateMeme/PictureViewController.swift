@@ -23,8 +23,14 @@ class PictureViewController: UIViewController {
     }
     
     @IBAction func saveThePhoto(_ sender: UIButton) {
-        UIImageWriteToSavedPhotosAlbum(chosenPictureImageView.image!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
-        dismiss(animated: true, completion: nil)
+        print("hello")
+        if let topText = topTextField.text {
+            print("top text")
+        } else if let botText = bottomTextField.text {
+            print("boit text")
+        }
+        //UIImageWriteToSavedPhotosAlbum(chosenPictureImageView.image!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+        //dismiss(animated: true, completion: nil)
     }
     
     
@@ -44,14 +50,9 @@ class PictureViewController: UIViewController {
             present(ac, animated: true)
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func addTextToImage(addText: String) {
+        
     }
-    */
 
 }
