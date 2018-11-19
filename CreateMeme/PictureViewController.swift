@@ -24,22 +24,12 @@ class PictureViewController: UIViewController {
     
     @IBAction func saveThePhoto(_ sender: UIButton) {
         
-        let imageWidth = takenImage?.size.width
-        let imageHeight = takenImage?.size.height
-        
-        let test0 = chosenPictureImageView.frame
-        let test = chosenPictureImageView.bounds
-        
-        print(imageWidth!)
-        print(imageHeight!)
-        print(test0.size)
-        print(test0.maxX)
-        print(test.size)
+        let size = chosenPictureImageView.frame.size
         
         if let topText = topTextField.text {
             let topLabel = UILabel()
-            topLabel.frame = CGRect(x: 0, y: 0, width: imageWidth!, height: 20)
-            topLabel.textAlignment = .left
+            topLabel.frame = CGRect(x: 0, y: 0, width: size.width, height: 20)
+            topLabel.textAlignment = .center
             topLabel.textColor = UIColor.white
             topLabel.text = topText
             chosenPictureImageView.addSubview(topLabel)
@@ -47,8 +37,8 @@ class PictureViewController: UIViewController {
         
         if let botText = bottomTextField.text {
             let botLabel = UILabel()
-            botLabel.frame = CGRect(x: CGFloat(0), y: 200, width: imageWidth!, height: CGFloat(20))
-            botLabel.textAlignment = .left
+            botLabel.frame = CGRect(x: 0, y: size.height - 20, width: size.width, height: 20)
+            botLabel.textAlignment = .center
             botLabel.textColor = UIColor.white
             botLabel.text = botText
             chosenPictureImageView.addSubview(botLabel)
