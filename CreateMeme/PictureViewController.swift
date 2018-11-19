@@ -23,11 +23,35 @@ class PictureViewController: UIViewController {
     }
     
     @IBAction func saveThePhoto(_ sender: UIButton) {
-        print("hello")
+        
+        let imageWidth = takenImage?.size.width
+        let imageHeight = takenImage?.size.height
+        
+        let test0 = chosenPictureImageView.frame
+        let test = chosenPictureImageView.bounds
+        
+        print(imageWidth!)
+        print(imageHeight!)
+        print(test0.size)
+        print(test0.maxX)
+        print(test.size)
+        
         if let topText = topTextField.text {
-            print("top text")
-        } else if let botText = bottomTextField.text {
-            print("boit text")
+            let topLabel = UILabel()
+            topLabel.frame = CGRect(x: 0, y: 0, width: imageWidth!, height: 20)
+            topLabel.textAlignment = .left
+            topLabel.textColor = UIColor.white
+            topLabel.text = topText
+            chosenPictureImageView.addSubview(topLabel)
+        }
+        
+        if let botText = bottomTextField.text {
+            let botLabel = UILabel()
+            botLabel.frame = CGRect(x: CGFloat(0), y: 200, width: imageWidth!, height: CGFloat(20))
+            botLabel.textAlignment = .left
+            botLabel.textColor = UIColor.white
+            botLabel.text = botText
+            chosenPictureImageView.addSubview(botLabel)
         }
         //UIImageWriteToSavedPhotosAlbum(chosenPictureImageView.image!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
         //dismiss(animated: true, completion: nil)
