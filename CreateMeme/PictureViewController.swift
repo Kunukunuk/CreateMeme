@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class PictureViewController: UIViewController {
 
@@ -24,27 +25,38 @@ class PictureViewController: UIViewController {
     
     @IBAction func saveThePhoto(_ sender: UIButton) {
         
-        let size = chosenPictureImageView.frame.size
+        //let size = chosenPictureImageView.frame.size
+        let reSizedImage = AVMakeRect(aspectRatio: (takenImage?.size)!, insideRect: chosenPictureImageView.frame)
         
         if let topText = topTextField.text {
             let topLabel = UILabel()
-            topLabel.frame = CGRect(x: 0, y: 0, width: size.width, height: 20)
+            topLabel.frame = CGRect(x: 0, y: reSizedImage.minY, width: reSizedImage.maxX, height: 50)
             topLabel.textAlignment = .center
             topLabel.textColor = UIColor.white
+            topLabel.minimumScaleFactor = 0.1
+            topLabel.lineBreakMode = .byClipping
+            topLabel.numberOfLines = 0
+            topLabel.adjustsFontSizeToFitWidth = true
+            topLabel.font = topLabel.font.withSize(topLabel.frame.height * 3/4)
             topLabel.text = topText
             chosenPictureImageView.addSubview(topLabel)
         }
         
         if let botText = bottomTextField.text {
             let botLabel = UILabel()
-            botLabel.frame = CGRect(x: 0, y: size.height - 20, width: size.width, height: 20)
+            botLabel.frame = CGRect(x: 0, y: reSizedImage.maxY - 50, width: reSizedImage.maxX, height: 50)
             botLabel.textAlignment = .center
             botLabel.textColor = UIColor.white
+            botLabel.minimumScaleFactor = 0.1
+            botLabel.lineBreakMode = .byClipping
+            botLabel.numberOfLines = 0
+            botLabel.adjustsFontSizeToFitWidth = true
+            botLabel.font = botLabel.font.withSize(botLabel.frame.height * 3/4)
             botLabel.text = botText
             chosenPictureImageView.addSubview(botLabel)
         }
-        //UIImageWriteToSavedPhotosAlbum(chosenPictureImageView.image!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
-        //dismiss(animated: true, completion: nil)
+        UIImageWriteToSavedPhotosAlbum(chosenPictureImageView.image!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+        dismiss(animated: true, completion: nil)
     }
     
     
@@ -68,5 +80,6 @@ class PictureViewController: UIViewController {
     func addTextToImage(addText: String) {
         
     }
+    
 
 }
