@@ -39,7 +39,12 @@ class PictureViewController: UIViewController {
             topLabel.adjustsFontSizeToFitWidth = true
             topLabel.font = topLabel.font.withSize(topLabel.frame.height * 3/4)
             topLabel.text = topText
-            chosenPictureImageView.addSubview(topLabel)
+            UIGraphicsBeginImageContextWithOptions(chosenPictureImageView.bounds.size, false, 0)
+            chosenPictureImageView.layer.render(in: UIGraphicsGetCurrentContext()!)
+            topLabel.layer.render(in: UIGraphicsGetCurrentContext()!)
+            let newImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            chosenPictureImageView.image = newImage
         }
         
         if let botText = bottomTextField.text {
@@ -53,10 +58,15 @@ class PictureViewController: UIViewController {
             botLabel.adjustsFontSizeToFitWidth = true
             botLabel.font = botLabel.font.withSize(botLabel.frame.height * 3/4)
             botLabel.text = botText
-            chosenPictureImageView.addSubview(botLabel)
+            UIGraphicsBeginImageContextWithOptions(chosenPictureImageView.bounds.size, false, 0)
+            chosenPictureImageView.layer.render(in: UIGraphicsGetCurrentContext()!)
+            botLabel.layer.render(in: UIGraphicsGetCurrentContext()!)
+            let newImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            chosenPictureImageView.image = newImage
         }
-        UIImageWriteToSavedPhotosAlbum(chosenPictureImageView.image!, self, nil, nil)
-        dismiss(animated: true, completion: nil)
+//        UIImageWriteToSavedPhotosAlbum(chosenPictureImageView.image!, self, nil, nil)
+//        dismiss(animated: true, completion: nil)
         
     }
     
