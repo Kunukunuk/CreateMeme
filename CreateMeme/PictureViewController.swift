@@ -39,7 +39,9 @@ class PictureViewController: UIViewController {
             topLabel.adjustsFontSizeToFitWidth = true
             topLabel.font = topLabel.font.withSize(topLabel.frame.height * 3/4)
             topLabel.text = topText
+            //UIGraphicsBeginImageContextWithOptions(chosenPictureImageView.bounds.size, false, 0)
             UIGraphicsBeginImageContextWithOptions(chosenPictureImageView.bounds.size, false, 0)
+    
             chosenPictureImageView.layer.render(in: UIGraphicsGetCurrentContext()!)
             topLabel.layer.render(in: UIGraphicsGetCurrentContext()!)
             let newImage = UIGraphicsGetImageFromCurrentImageContext()
@@ -58,12 +60,12 @@ class PictureViewController: UIViewController {
             botLabel.adjustsFontSizeToFitWidth = true
             botLabel.font = botLabel.font.withSize(botLabel.frame.height * 3/4)
             botLabel.text = botText
-            UIGraphicsBeginImageContextWithOptions(chosenPictureImageView.bounds.size, false, 0)
-            chosenPictureImageView.layer.render(in: UIGraphicsGetCurrentContext()!)
-            botLabel.layer.render(in: UIGraphicsGetCurrentContext()!)
-            let newImage = UIGraphicsGetImageFromCurrentImageContext()
-            UIGraphicsEndImageContext()
-            chosenPictureImageView.image = newImage
+//            UIGraphicsBeginImageContextWithOptions(chosenPictureImageView.bounds.size, false, 0)
+//            chosenPictureImageView.layer.render(in: UIGraphicsGetCurrentContext()!)
+//            botLabel.layer.render(in: UIGraphicsGetCurrentContext()!)
+//            let newImage = UIGraphicsGetImageFromCurrentImageContext()
+//            UIGraphicsEndImageContext()
+            //chosenPictureImageView.image = newImage
         }
 //        UIImageWriteToSavedPhotosAlbum(chosenPictureImageView.image!, self, nil, nil)
 //        dismiss(animated: true, completion: nil)
