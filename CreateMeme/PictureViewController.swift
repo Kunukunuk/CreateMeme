@@ -30,7 +30,7 @@ class PictureViewController: UIViewController {
         
         if let topText = topTextField.text {
             
-            UIGraphicsBeginImageContextWithOptions(reSizedImage.size, false, 0)
+            //UIGraphicsBeginImageContextWithOptions(chosenPictureImageView.bounds.size, false, 0)
             let topLabel = UILabel()
             topLabel.frame = CGRect(x: 0, y: reSizedImage.minY, width: reSizedImage.maxX, height: 50)
             topLabel.textAlignment = .center
@@ -42,10 +42,8 @@ class PictureViewController: UIViewController {
             topLabel.font = topLabel.font.withSize(topLabel.frame.height * 3/4)
             topLabel.text = topText
             chosenPictureImageView.addSubview(topLabel)
-//            UIGraphicsBeginImageContextWithOptions(chosenPictureImageView.bounds.size, false, 0)
-//
+            UIGraphicsBeginImageContextWithOptions(chosenPictureImageView.bounds.size, false, 0)
             chosenPictureImageView.layer.render(in: UIGraphicsGetCurrentContext()!)
-//            topLabel.layer.render(in: UIGraphicsGetCurrentContext()!)
             let newImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             chosenPictureImageView.image = newImage
@@ -70,8 +68,8 @@ class PictureViewController: UIViewController {
             //chosenPictureImageView.image = newImage
             chosenPictureImageView.addSubview(botLabel)
         }*/
-        UIImageWriteToSavedPhotosAlbum(chosenPictureImageView.image!, self, nil, nil)
-        dismiss(animated: true, completion: nil)
+        //UIImageWriteToSavedPhotosAlbum(chosenPictureImageView.image!, self, nil, nil)
+        //dismiss(animated: true, completion: nil)
         
     }
     
