@@ -25,12 +25,10 @@ class PictureViewController: UIViewController {
     
     @IBAction func saveThePhoto(_ sender: UIButton) {
         
-        //let size = chosenPictureImageView.frame.size
         let reSizedImage = AVMakeRect(aspectRatio: (takenImage?.size)!, insideRect: chosenPictureImageView.frame)
         
         if let topText = topTextField.text {
             
-            //UIGraphicsBeginImageContextWithOptions(chosenPictureImageView.bounds.size, false, 0)
             let topLabel = UILabel()
             topLabel.frame = CGRect(x: 0, y: reSizedImage.minY, width: reSizedImage.maxX, height: 50)
             topLabel.textAlignment = .center
@@ -71,7 +69,6 @@ class PictureViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.dismiss(animated: true, completion: nil)
         }
-        //dismiss(animated: true, completion: nil)
         
     }
     
