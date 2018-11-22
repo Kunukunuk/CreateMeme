@@ -49,7 +49,7 @@ class PictureViewController: UIViewController {
             chosenPictureImageView.image = newImage
         }
         
-        /*if let botText = bottomTextField.text {
+        if let botText = bottomTextField.text {
             let botLabel = UILabel()
             botLabel.frame = CGRect(x: 0, y: reSizedImage.maxY - 50, width: reSizedImage.maxX, height: 50)
             botLabel.textAlignment = .center
@@ -60,15 +60,17 @@ class PictureViewController: UIViewController {
             botLabel.adjustsFontSizeToFitWidth = true
             botLabel.font = botLabel.font.withSize(botLabel.frame.height * 3/4)
             botLabel.text = botText
-//            UIGraphicsBeginImageContextWithOptions(chosenPictureImageView.bounds.size, false, 0)
-//            chosenPictureImageView.layer.render(in: UIGraphicsGetCurrentContext()!)
-//            botLabel.layer.render(in: UIGraphicsGetCurrentContext()!)
-//            let newImage = UIGraphicsGetImageFromCurrentImageContext()
-//            UIGraphicsEndImageContext()
-            //chosenPictureImageView.image = newImage
             chosenPictureImageView.addSubview(botLabel)
-        }*/
-        //UIImageWriteToSavedPhotosAlbum(chosenPictureImageView.image!, self, nil, nil)
+            UIGraphicsBeginImageContextWithOptions(chosenPictureImageView.bounds.size, false, 0)
+            chosenPictureImageView.layer.render(in: UIGraphicsGetCurrentContext()!)
+            let newImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            chosenPictureImageView.image = newImage
+        }
+        UIImageWriteToSavedPhotosAlbum(chosenPictureImageView.image!, self, nil, nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.dismiss(animated: true, completion: nil)
+        }
         //dismiss(animated: true, completion: nil)
         
     }
