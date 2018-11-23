@@ -57,14 +57,22 @@
 			isa = PBXGroup;
 			children = (
 				0D3099DF219E5510009B7E2D /* AppDelegate.swift */,
-				0D3099E1219E5510009B7E2D /* ViewController.swift */,
-				0D76376D219FBD4400A5362D /* PictureViewController.swift */,
+				0D76376F21A78C9E00A5362D /* ViewControllers */,
 				0D3099E3219E5510009B7E2D /* Main.storyboard */,
 				0D3099E6219E5512009B7E2D /* Assets.xcassets */,
 				0D3099E8219E5512009B7E2D /* LaunchScreen.storyboard */,
 				0D3099EB219E5512009B7E2D /* Info.plist */,
 			);
 			path = CreateMeme;
+			sourceTree = "<group>";
+		};
+		0D76376F21A78C9E00A5362D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0D3099E1219E5510009B7E2D /* ViewController.swift */,
+				0D76376D219FBD4400A5362D /* PictureViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
