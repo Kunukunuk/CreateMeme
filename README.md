@@ -25,6 +25,9 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 Describe any challenges encountered while building the app.
 
+1. Saving the image with the text
+2. Adjust frame size after aspect fit
+
 ## License
 
     Copyright [2018] [Kun Huang]
